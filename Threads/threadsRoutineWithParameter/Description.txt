@@ -1,0 +1,1 @@
+Main will generate N threads (N given as parameter, or read as input), will generate an array containing the first N prime numbers. Each thread will execute a function called routine, with it`s thread number and it`s assigned prime number as parameters (sent as a structure containing two integers: id and primeNumber). This function will tell you the id and the prime number.

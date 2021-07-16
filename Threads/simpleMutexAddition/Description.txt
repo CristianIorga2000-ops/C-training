@@ -1,0 +1,1 @@
+Very simple example of multiple threads incrementing a single integer at the same time, organised by a mutex lock. There will be N threads (N can be given as parameter or as input) each incrementing 1,000,000 times.

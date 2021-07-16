@@ -1,0 +1,1 @@
+N threads throw a dice, return the value to main, main prints it out (You can give N as parameter have a prompt asking you to give it during execution).

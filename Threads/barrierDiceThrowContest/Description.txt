@@ -1,0 +1,12 @@
+Main thread creates threads.
+Each thread throws a dice.
+Main waits for all threads to throw (barrier is used), then calculates the winners(all threads who threw the biggest value).
+Each thread waits for main to elect the winners(a very primitive binary semaphore is used), then moves on to yelling at you saying wether they have won or not.
+
+Modifiable predefined values:
+	NR_THREADS - number of created threads
+	DICE_MAX - max value of dice (maybe they use one hundred D&D dices, who knows?)
+	SLEEP_MAX - max amount of time (in seconds) that is needed for a thread to throw a dice	
+
+
+This is a practical example of barrier usage.

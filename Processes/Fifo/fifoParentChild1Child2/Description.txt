@@ -1,0 +1,2 @@
+Implement a process that creates two child processes A and B, that communicate using fifo. 
+Process A sends to process B 2 numbers and process B returns to A a random number between the two.

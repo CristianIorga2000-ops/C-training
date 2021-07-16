@@ -1,0 +1,3 @@
+Implement a program that creates 2 child processes A and B, which communicate using FIFO.
+Process A sends to process B a number n read as input; process B receives this number, subtracts 4 and sends it to process A;
+Process A reads the number from B, decreases the number by 1 and sends it to B... and so on, until the number n has 1 digit.

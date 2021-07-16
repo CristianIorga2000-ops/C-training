@@ -1,0 +1,7 @@
+NOTE: THIS PROGRAM HAS MEMORY LEAKS!
+Valgrind will notify you that there are memory leaks.
+If you find a fix, please notify me. I will attribute that fix to your name.
+
+Main process creates n threads and calculates the first m prime numbers (n, m can be given as execution parameters/ arguments or read from input).
+
+Each thread will have to calcualte the sum of a part of the array of prime numbers, then return that sum to the main thread. Main thread will sum all parts up and print the final sum.

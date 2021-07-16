@@ -1,0 +1,10 @@
+Main creates n (read either as parameter/ execution argument or as input) 'chef' threads.
+Each chef thread will attempt to use the cooking stoves to cook, consuming the available fuel of a cooking stove by a random amount.
+If a stove is occupied, chefs will attempt to find another one to cook on.
+This goes on until all stoves are depleted of fuel, in which case all chefs go home.
+
+Modifiable predefined variables:
+	STOVE_CAPACITY - how much fuel a stove has (measured burgers/ foot* ounce)
+	NR_STOVES - how many stoves there are available
+	MAX_CONSUMPTION - maximum amount of fuel a chef can consume in a cooking session
+	

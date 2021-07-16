@@ -1,0 +1,14 @@
+Arguments required: n (a number, it will be the size of the generated array)
+	Parent forks, creates a child
+	Parent creates an array of size n containing pseudo-randomly generated integers
+	Parent sends the array trough a named pipe (fifo) to child
+	Child calculates sum and sends it back to parent
+	Parent prints sum
+
+Parent will also print the array, and there will be intermediary prints for when entering child only and parent only code.
+Exist statuses:
+	0 - ok
+	1 - invalid open() 
+	2 - invalid read()
+	3 - invalid write()
+	4 - invalid number of args

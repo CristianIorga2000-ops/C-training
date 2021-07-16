@@ -1,0 +1,16 @@
+Main creates n threads (N can be given as param/ input) that each consume a randomly chosen amount of  units of  fuel from a common fuel pool. 
+
+Main also creates M fuel suppliers (M can be given as param/ input)  that supply the fuel pool with fuel a number of  times each (it will be automatically calculated such that each consuming thread will have enough fuel to consume). 
+
+MODIFIABLE VALUES:
+	SLEEP_TIME 
+		sleep time in refillFuel routine
+	REFILL_COUNT 
+		how many times each refiller will refill
+	int choices[]={...} 
+		the possible values that a consumer can have for consumption
+		any integer values can be added and deleted as will, as long as there is at least one
+
+Conditional variables will be used for proper waiting and signaling.
+Mutexes for sync.
+

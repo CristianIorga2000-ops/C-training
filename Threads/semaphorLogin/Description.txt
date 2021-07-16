@@ -1,0 +1,8 @@
+Very basic example of semaphore usage.
+You have a number of threads that act as users trying to log in. 
+However, your server has a limited amount of users that can be online at one time.
+A semaphor is used to mimic this phenomenon.
+
+Modifiable predefined values:
+	NR_THREADS - number of threads (users)
+	SERVER_LIMIT - maximum number of users in server

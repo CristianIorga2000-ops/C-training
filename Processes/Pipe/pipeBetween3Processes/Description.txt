@@ -1,0 +1,16 @@
+We have a hardcoded array of integers.
+Main creates to child processes, and proceeds to divide the work of summing all the numbers in the array between Main and the 2 children.
+The children then communicate their sum to the parent trough simple (unnamed) pipes.
+The parent sums all parts and prints the final sum.
+
+Exit statuses are used to signal erros during execution.
+Exit status:
+	0 - ok
+	1 - Child1 fork() error
+	2 - Child2 fork() error
+	3 - pipe1 init error
+	4 - pipe2 init error
+	5 - parent read from pipe1 error
+	6 - parent read from pipe2 error
+	7 - child2 write in pipe error
+	9 - child1 write in pipe error

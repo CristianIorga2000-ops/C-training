@@ -1,0 +1,13 @@
+Arguments: a, b (both are should be integer numbers)
+The parent process will create a child, then sends him these two numbers
+The child calculates their sum and sends it back trough the parent
+The parent will print the sum
+Communication will be done trough pipes
+
+Exist status:
+	0 - ok
+	2 - pipe creation failure
+	3 - fork() failure
+	4 - read() failure
+	5 - write() failure
+

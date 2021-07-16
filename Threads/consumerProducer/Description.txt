@@ -1,0 +1,7 @@
+You have n consumers and m producers (n, m readable from input, can also be given as execution parameters/ arguments).
+You also have a buffer of a limited size.
+Semaphors are used to assure smooth functioning of continuous producing and consuming.
+
+Modifiable predefined values:
+	BUFFER_SIZE - size of buffer
+
