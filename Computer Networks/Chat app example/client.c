@@ -31,17 +31,21 @@ void parseArgs(int argc, char *argv[], char *ip,int *port){
 int main(int argc, char *argv[]){
 	int port = DEFAULT_PORT;
 	char *ip;
-	parseArgs(argc, argv, ip, &port);
-	int sockfd;
+	parseArgs(argc, argv, ip, &port);	
+	
+	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	struct sockaddr_in server_address;
 	struct hostent *server = gethostbyname(ip);
 	if (server == NULL)
 		error("Such a host does not exist");
+
 	char buffer[BUFFER_SIZE];
+	
 	bzero((char *) &server_address, sizeof(server_address));
 	server_address.sin_family = AF_INET;
 	bcopy((char *) server->h_addr, (char *)&server_address.sin_addr.s_addr, server->h_length);
 	server_address.sin_port = htons(port);
+	
 	if(connect(sockfd, (struct sockaddr *) &server_address, sizeof(server_address)) < 0)
 		error("Connection failed");
 	
