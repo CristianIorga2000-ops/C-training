@@ -15,31 +15,30 @@ void error(const char *msg){
 	exit(1);
 }
 
-void parseArgs(int argc, char *argv[], char *ip,int *port){
-	if (argc > 2){
+void parseArgs(int argc, char *argv[],int *port){
+	if (argc > 2)
 		sscanf(argv[2],"%d", port);
-	}
-	if(argc > 1){
-		ip = argv[1];
-	}
-	else
+	else if (argc < 2)
 		perror("You must give the ip and (optionally) the port as command line arguments");
-	printf("Selected ip is: %s\n", ip);
 	printf("Selected port is: %d\n", *port);
 }
 
 int main(int argc, char *argv[]){
 	int port = DEFAULT_PORT;
-	char *ip;
-	parseArgs(argc, argv, ip, &port);	
+	parseArgs(argc, argv,&port);
 	
+	char *ip = argv[1];
+	printf("Selected ip is: %s\n", ip);	
+	char buffer[BUFFER_SIZE];
+		
 	int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	struct sockaddr_in server_address;
-	struct hostent *server = gethostbyname(ip);
+	
+	struct hostent *server;
+	server = gethostbyname(argv[1]);
 	if (server == NULL)
 		error("Such a host does not exist");
 
-	char buffer[BUFFER_SIZE];
 	
 	bzero((char *) &server_address, sizeof(server_address));
 	server_address.sin_family = AF_INET;
